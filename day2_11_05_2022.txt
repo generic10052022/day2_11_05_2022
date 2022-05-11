@@ -208,7 +208,7 @@ else
 -----------------------------------------------------------------------------------------------
 Compare two numbers and display the largest number out of two.
 
-class Demo13{
+class Demo13b{
 public static void main(String args[]) {
 int num1=100;
 int num2=80;
@@ -266,7 +266,7 @@ System.out.println(num); //102
 }
 }
 ----------------------------------------------------------------------
-class Demo16{
+class Demo16b{
 public static void main(String args[]) {
 int num=100;
 num+=2;
@@ -301,7 +301,7 @@ System.out.println(result); // 70
 }
 -----------------------------------------------
 
-class Demo18{
+class Demo18b{
 public static void main(String args[]) {
 int num1=100;
 int num2=40;
@@ -311,3 +311,122 @@ System.out.println(result); 1//38
 
 }
 }
+------------------------------------------------------------------
+/* In the below code we have the expression d+num. d is of double type and num is of int. 
+Now in an expression where we have variables of different datatypes , the datatype which is 
+smaller in size gets converted into the type which is biggest in the expression.
+In the below code double is of 8 bytes and int is of 4 bytes. So int type variable converts into
+double type */ 
+
+class Demo19 {
+   public static void main(String args[]){
+   int num=10;
+   double d=12.34;
+   double result=d+num;
+   System.out.println(result);
+ }
+}
+------------------------------------------------------------------------
+// Compilation error as double cannot be assigned to int because
+// of double's bigger size than int
+class Demo20 {
+   public static void main(String args[]){
+  
+   double d=12.34;
+   int num;
+   num=d;
+   System.out.println(num);
+ }
+}
+-----------------------------------------------------------------------------
+// Type casting 
+class Demo21 {
+   public static void main(String args[]){
+  
+   double d=12.34;
+   int num;
+   num=(int)d;
+   System.out.println(num);  //12
+ }
+}
+-----------------------------------------------------------
+class Demo22 {
+   public static void main(String args[]){
+  
+   int num1=5;
+   int num2=2;
+   int result1=num1/num2;
+   float result2=num1/num2;
+   System.out.println(result1);   //2
+   System.out.println(result2);   //2.0
+ }
+}
+-----------------------------------------------------------
+class Demo23 {
+   public static void main(String args[]){
+  
+   float num1=5;
+   int num2=2;
+   float result=num1/num2; 
+   
+   System.out.println(result);   //2.5
+    }
+}
+------------------------------------------------------------------------------------------
+class Demo24 {
+   public static void main(String args[]){
+  
+   float num1=5;
+   int num2=2;
+   int result=num1/num2; //compilation error
+   
+   System.out.println(result);   
+    }
+}
+------------------
+class Demo25 {
+   public static void main(String args[]){
+  
+   float num1=5;
+   int num2=2;
+   int result=(int)num1/num2; 
+   
+   System.out.println(result);   //2
+    }
+}
+------------------------------------------------------------------------------------------------------
+class Demo26 {
+   public static void main(String args[]){
+  
+   float num1=5;
+   int num2=2;
+   float result=num1/num2; 
+   
+   System.out.println(result);   //2.5
+    }
+}
+----------------------------------------
+
+class Demo27 {
+   public static void main(String args[]){
+  
+   int num1=5;
+   int num2=2;
+   float result=(float)num1/num2; 
+   
+   System.out.println(result);  // 2.5
+    }
+}
+-------------------------------
+
+class Demo28 {
+   public static void main(String args[]){
+  
+   int num1=5;
+   int num2=2;
+   float result=(float)(num1/num2); 
+   
+   System.out.println(result);  //2.0
+    }
+}
+-----------------------------------------------------------------------------------
