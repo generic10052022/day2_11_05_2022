@@ -430,3 +430,1074 @@ class Demo28 {
     }
 }
 -----------------------------------------------------------------------------------
+Programming Constructs:
+
+if (<condition>) {  // Curly braces are not required if there is only one statement inside the block
+    <statements>;
+}
+
+if(boolean) {
+
+}
+
+
+class ConditionCheckDemo1 {
+
+      public static void main(String args[])
+     {
+     int num=10;
+     if(num=10) {    // if(int){} expression datatype cannot be int  
+        System.out.println("The value is 10");
+     }
+  }
+}
+
+// Type mismatch: cannot convert from int to boolean
+
+
+class ConditionCheckDemo2 {
+
+      public static void main(String args[])
+     {
+     int num=10;
+     if(num==10) {    // if(boolean){} expression datatype cannot be int  if(true){}
+        System.out.println("The value is 10");
+     }
+  }
+}
+
+class ConditionCheckDemo3 {
+
+      public static void main(String args[])
+     {
+     int num1=10;
+     int num2=20;
+     if(num1+num2) {    // if(int){} expression datatype cannot be int  if(int){}
+        System.out.println("The value is 10");
+     }
+  }
+}
+// The above code will show compiltion error
+
+
+class ConditionCheckDemo4{
+
+      public static void main(String args[])
+     {
+     int num1=10;
+     int num2=20;
+     if(num1==num2) {    // if(boolean){} expression datatype cannot be int  if(boolean){}
+        System.out.println("num1 and num2 are equal");
+     }
+  }
+}
+
+
+
+class ConditionCheckDemo5{
+
+      public static void main(String args[])
+     {
+     int num1=10;
+     int num2=20;
+     if(num1==num2) {    // if(boolean){} expression datatype cannot be int  if(boolean){}
+        System.out.println("num1 and num2 are equal");
+     } 
+     else{
+         System.out.println("num1 and num2 are not equal");
+         }
+  }
+}
+
+
+
+public class Customer {
+	public static void main(String[] args) {
+		String customerType = "Regular";
+		int quantity = 2;
+		int unitPrice = 10;
+		int totalCost = 0;
+		int discount = 5;
+		totalCost = unitPrice * quantity;
+		if (customerType == "Regular") {
+			totalCost = totalCost - (totalCost * discount / 100);
+			System.out.println("You are a regular customer and eligible for 5% discount");
+			
+		}
+		System.out.println(customerType);
+		System.out.println("Total cost: " + totalCost);
+	}
+}
+--------------------------------------------------------------------------------------------------------------
+if (<condition>) { 
+    <statements>; 
+} 
+else { 
+    <statements>; 
+} 
+
+public class Customer1 {
+	public static void main(String[] args) {
+		String customerType = "Regular";
+		int quantity = 2;
+		int unitPrice = 10;
+		int totalCost = 0;
+		int discount = 5;
+		int deliveryCharge = 5;
+		totalCost = unitPrice * quantity;
+		if (customerType == "Regular") {
+			totalCost = totalCost - (totalCost * discount / 100);
+			System.out.println("You are a regular customer and eligible for 5% discount");
+		} else {
+			totalCost = totalCost + deliveryCharge;
+			System.out.println("You need to pay an additional delivery charge of $5");
+		}
+		System.out.println("Total cost: " + totalCost);
+	}
+}
+----------------------------------------------------------------------------------------------------------
+
+if (<condition 1>) {
+    <statements>;
+}
+else if (<condition 2>) {
+    <statements>;
+}
+else if (<condition 3>) {
+    <statements>;
+}
+else {
+    <statements>;
+} 
+------------------------------------------------------------------------------------------------------------
+public class Customer2 {
+	public static void main(String[] args) {
+		String customerType = "Regular";
+		int quantity = 3;
+		int unitPrice = 10;
+		int discount = 5;
+		int deliveryCharge = 5;
+		int totalCost = unitPrice * quantity;
+		if (customerType == "Regular") {
+			totalCost = totalCost - (totalCost * discount / 100);
+			System.out.println("You are a regular customer and eligible for 5% discount");
+			System.out.println("The total cost to be paid is " + totalCost);
+		} else if (customerType == "Guest") {
+			totalCost = totalCost + deliveryCharge;
+			System.out.println("You need to pay an additional delivery charge of $5");
+			System.out.println("The total cost to be paid is" + totalCost);
+		} else // If there is only one statement inside a block, {} is optional
+			System.out.println("Invalid customer type");
+	}
+}
+
+So within if else if else ladder, we can have
+single if
+multiple else if
+single else
+OR
+single if
+single else if
+single else
+OR
+single if
+single else if
+OR
+single if
+single else
+
+-------------------------------------------------------------------------------------------------------------
+
+if (<condition 1>) {
+    if (<condition 2>) {
+        <statements>;
+    }
+    else {
+        <statements>;
+    }
+}
+
+
+public class Customer3 {
+	public static void main(String[] args) {
+		String customerType = "Guest";
+		int quantity = 2;
+		int unitPrice = 10;
+		int totalCost = 0;
+		int discount = 5;
+		int deliveryCharge = 5;
+		totalCost = (unitPrice * quantity);
+		if (customerType == "Regular") {
+			totalCost = totalCost - (totalCost * discount / 100);
+			System.out.println("You are a regular customer and have got 5% discount");
+			System.out.println("The total cost to be paid is " + totalCost);
+			if (totalCost >= 20){
+				System.out.println("You have got a gift voucher!!!!");
+			}else{
+                                System.out.println("You are not eligible for the voucher");
+                             }
+		} else if (customerType == "Guest") {
+			totalCost = totalCost + deliveryCharge;
+			System.out.println("You need to pay an additional delivery charge of $5");
+			System.out.println("The total cost to be paid is " + totalCost);
+		} else {
+			System.out.println("Invalid selection");
+		}
+	}
+}
+---------------------------------------------------------------------------------------------------------------
+public class ItemPrice {
+public static void main(String args[]) {
+    String customerType="regular";
+    int quantity=5;
+    int price=45;
+    int discount=5;
+    int totalCost=0;
+     totalCost = quantity*price;
+    if (customerType == "regular") {
+        totalCost=totalCost-totalCost*(5/100);
+        System.out.println(" congrats! you are a regular customer and you are eligible for 5% discount");
+    }
+    System.out.println(" total cost is "+totalCost);
+}
+}
+---------------------------------------------------------------------------
+
+public class ItemPrice2 {
+public static void main(String args[]) {
+    String customerType="regular";
+    int quantity=5;
+    int price=45;
+    int discount=5;
+    float totalCost=0;
+     totalCost = quantity*price;
+    if (customerType == "regular") {
+        totalCost=totalCost-totalCost*(float)discount/100;
+        System.out.println(" congrats! you are a regular customer and you are eligible for 5% discount");
+    }
+    System.out.println(" total cost is "+totalCost);
+}
+}
+---------------------------------------------------------------------------------------------------------- 
+switch (expression or variable) {
+   case value1: <statements>;
+                break;
+   case value2: <statements>;
+                break;
+   default: <statements>;
+}
+
+
+class SwitchDemo1 {
+
+   public static void main(String args[]){
+     int ch=2;
+     switch(ch){
+       case 1 : System.out.println("Sunday");
+                break;
+       case 2 : System.out.println("Monday");
+                break;
+       case 3  : System.out.println("Tuesday");
+                 break;
+       default : System.out.println("Your option is wrong");
+     }
+  }
+}
+
+
+class SwitchDemo2 {
+
+   public static void main(String args[]){
+     int ch=2;
+     switch(ch){
+       case 1 : System.out.println("Sunday");
+                break;
+       case 2 : System.out.println("Monday");
+                //break;
+       case 3  : System.out.println("Tuesday");
+                 //break;
+       default : System.out.println("Your option is wrong");
+     }
+  }
+}
+
+// default can be place anywhere in the begining or in between of the switch block
+
+class SwitchDemo3 {
+
+   public static void main(String args[]){
+     int ch=2;
+     switch(ch){
+      default : System.out.println("Your option is wrong");
+                 break;
+       case 1 : System.out.println("Sunday");
+                break;
+       case 2 : System.out.println("Monday");
+                break;
+       case 3  : System.out.println("Tuesday");
+             
+      
+     }
+  }
+}
+Q What datatypes are allowed with the switch expression.
+A char,byte,short,int,String
+
+We cannot have as long,float,double or boolean
+class SwitchDemo4 {
+
+   public static void main(String args[]){
+     long ch=2;
+     switch(ch){
+      default : System.out.println("Your option is wrong");
+                 break;
+       case 1 : System.out.println("Sunday");
+                break;
+       case 2 : System.out.println("Monday");
+                break;
+       case 3  : System.out.println("Tuesday");
+             
+      
+     }
+  }
+}
+// Cannot switch on a value of type long. Only convertible int values, strings or enum variables are permitted
+
+
+class SwitchDemo5 {
+
+   public static void main(String args[]){
+     String weekDays="Monday";
+     switch(weekDays){
+      
+       case "Sunday" : System.out.println("Sunday");
+                       break;
+       case "Monday" : System.out.println("Monday");
+                       break;
+       case "Tuesday"  : System.out.println("Tuesday");
+                         break;     
+      
+       default : System.out.println("Your option is wrong");
+                 
+     }
+  }
+}
+--------------------------------------------------------------------------------------------------
+{}
+
+* class Hello{}  
+* public static void main(String args[]){}
+* if(num>0){}
+* if(){} else if(){} else {}
+* switch(var) {case 1 :}
+
+
+ class Hello {
+public static void main(String args[]){
+   int num=10;
+   if(num>0){
+     System.out.println("Yes the num is greater than 0");
+   } // closing of if
+  }  // closing brace for main
+} // closing brace for class Hello  
+
+--------------------------------------------------------------------------------------------------------------
+
+// A single character can be treated as both string and a character
+  char ch='A';
+  String grade="A";
+  String data="Hello";
+  char ch="Hello";// We cannot write this
+  String code="E0001"; // alphanumeric value we will be taking String
+
+int marks=60;
+
+if marks>=80  A
+if marks>=70 and <80   B
+if marks>=60 and <70   C
+else D
+
+int marks=43;
+if(marks>=80){
+   System.out.println("A");
+}else if(marks>=70 && marks<80){
+   System.out.println("B");
+}else if(marks>=60 && marks<70){
+   System.out.println("C");
+}else{
+   System.out.println("D");
+ }
+--------------------------------------------------------------------------------
+   (relational operators should be used to get a boolean type) ? if the first part is true evaluate this part : 
+    if the first part is false evaluate this part;
+
+  int num1=1;
+  int num2=3;
+  int max=(num2>num1)?num2 : num1;
+  System.out.println(max);
+
+  int num1=1;
+  int num2=3;
+  int max=(num1>num2)?num1 : num2;
+  System.out.println(max);
+
+--------------------------------------------------------------------------------------------------
+
+  char grade;
+  int marks=45;
+  grade=(marks>=80)?'A':(marks>=70)?'B':'C';
+  System.out.println(grade);
+  
+---------------------------------------------------------------------------------------------------------------
+entry controlled loop
+3 things which we need to take care of whenever we are applying iterations:
+1) We should take a counter which will keep a count of iteration and it should be initialised with a value.
+  int ctr=0;
+2) We need to check whether counters value is fine to enter the loop. for that we give a condition along with
+   while
+  while(ctr<10){}
+3) We have to change the value of the counter so that after entering the loop it checks whether to be part of
+the loop or exit the loop
+  ctr++ or ctr=ctr+1
+
+
+while (<condition>) { 
+   <statements>; 
+} 
+
+
+
+
+
+public class IterationDemo1 {
+
+	  public static void main(String args[]){
+		    int counter=1; // Step 1  // Initialisation is must otherwise we get compilation error
+		    while(counter<=10){  //Step2
+		     System.out.println(counter);
+		    counter++;     // Step3
+		    } // while loop ends
+		  }  // main method ends
+		}   // class ends
+
+
+
+---------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+
+public class IterationDemo2 {
+
+	  public static void main(String args[]){
+		    int counter=12; // Step 1  // Initialisation is must otherwise we get compilation error
+		    while(counter<=10){  //Step2
+		     System.out.println(counter);
+		    counter++;     // Step3
+		    } // while loop ends
+		  }  // main method ends
+		}   // class ends
+// In the above code the value of counter is 12 and while checking the condition , it is getting false. As
+it is false , it is not entering the loop. So no output is being shown.
+
+-------------------------------------------------------------------------------------------------------------
+
+
+import java.util.Scanner;
+
+public class Input {
+
+	public static void main(String[] args) {
+	  //java.util.Scanner scan=new java.util.Scanner(System.in);// Fully Qualified name of aclass
+	  // which is written with the package name FQN
+       Scanner scan=new Scanner(System.in);
+       // The above line means Scanner is a class and scan is a reference variable
+       // of Scanner class which is holding the address of a newly created object. The object is created
+       // with the keyword new during the runtime 
+       // System.in is to represent the keyboard for data entry
+       int num;
+       System.out.println("Enter the number");
+       num=scan.nextInt(); // nextInt is a method of Scanner class which is helping us to take number as an input
+       String str;
+       System.out.println("Enter a string");
+       str=scan.next();  // This helps in taking a string as an input
+       float f;
+       System.out.println("Enter a float value");
+       f=scan.nextFloat();
+       char ch; // For accepting a character we dont have something like nextChar();
+       System.out.println("Enter a character");
+       String str2=scan.next();  // accept a String  
+       ch=str2.charAt(0); // charAt is a method of String class which takes position as an input and return a character
+       // at that position suppose we entered y so y will be considered as a String intially in line 25
+       System.out.println(num);
+	   System.out.println(str);
+	   System.out.println(f);
+	   System.out.println(ch);
+	}
+
+}
+---------------------------------------------------------------------------------------------------------------
+
+//Importing the Scanner class
+import java.util.Scanner;
+public class Customer {
+	public static void main(String[] args) {
+		// Create a Scanner object
+		Scanner sc = new Scanner(System.in);
+		int totalCost = 0;
+		char wantToAddFoodItem = 'Y';
+		int unitPrice = 10;
+		int quantity = 1;
+		while (wantToAddFoodItem == 'Y') {
+			totalCost = totalCost + (quantity * unitPrice);
+			System.out.println("Order placed successfully");
+			System.out.println("Total cost: " + totalCost);
+			System.out.println("Do you want to add more food items to your order? Y or N");
+			String input = sc.next(); // Accepting input from the customer
+            // Extracting first character from the input string
+			wantToAddFoodItem = input.charAt(0); 
+		}
+	}
+}
+----------------------------------------------------------------------------------------
+Enter numbers from user and perform the sum of the numbers entered until unless we enter N from user.
+If user enter Y it should again accept the number
+Testcase1:
+Enter the number
+1
+Do you want to continue?
+Y
+Enter the number
+2
+Dou you want to continue?
+N
+The sum is: 3
+
+Testcase2:
+Enter the number
+1
+Do you want to continue?
+N
+The sum is: 1
+
+class Exercise1 {
+
+  public static void main(String args[]) {
+
+  }
+}
+-------------------------------------------------------------------------------------------------------------
+exit controller loop 
+do { 
+   <statements>; 
+} while (<condition>); 
+
+
+
+
+class DoWhile{
+  public static void main(String args[]){
+
+int counter=0;
+do{
+    System.out.println(counter);
+    counter++;
+  }while(counter<10);
+
+   }
+}
+// Do while loop executes once if the condition is false but that is not with the
+// while loop. While loop wont execute if while checking for the first time, the 
+// condition is false
+package com.infosys.iteration;
+class DoWhile1{
+  public static void main(String args[]){
+
+int counter=11;
+do{
+    System.out.println(counter);
+    counter++;
+  }while(counter<10);
+
+   }
+}
+
+------------------------------------------
+//Importing the Scanner class
+import java.util.Scanner;
+public class Customer1 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in); // Creating a Scanner object
+		int totalCost = 0;
+		char wantToAddFoodItem = 'N';
+		int unitPrice = 10;
+		int quantity = 1;
+		do {
+			totalCost = totalCost + (quantity * unitPrice);
+			System.out.println("Order placed successfully!");
+			System.out.println("Total cost: " + totalCost);
+			System.out.println("Do you want to add more food items to the order? Y or N");
+			String input = sc.next(); // Accepting input from the customer
+			// Extracting first character from the input string
+			wantToAddFoodItem = input.charAt(0);
+		} while (wantToAddFoodItem == 'Y');
+		System.out.println("Thank you for ordering the food! It will reach you shortly...");
+	}
+}
+
+   ------------------------------------------------------------------------------------------------------
+
+package com.infosys.iteration;
+//Importing the Scanner class
+import java.util.Scanner;
+public class Customer2 {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in); // Creating a Scanner object
+		int totalCost = 0;
+		char wantToAddFoodItem;
+		int unitPrice = 10;
+		int quantity = 1;
+		do {
+			totalCost = totalCost + (quantity * unitPrice);
+			System.out.println("Order placed successfully!");
+			System.out.println("Total cost: " + totalCost);
+			System.out.println("Do you want to add more food items to the order? Y or N");
+			String input = sc.next(); // Accepting input from the customer
+			// Extracting first character from the input string
+			wantToAddFoodItem = input.charAt(0);
+		} while (wantToAddFoodItem == 'Y');
+		System.out.println("Thank you for ordering the food! It will reach you shortly...");
+	}
+}
+---------------------------------------------------------------------------------------------------------------
+for (<initialization>; <condition>; <increment/decrement>) { 
+     <statements>; 
+} 
+
+//Importing the Scanner class
+
+import java.util.Scanner;
+public class Customer3 {
+	public static void main(String[] args) {
+		// Create a Scanner object
+		Scanner sc = new Scanner(System.in);
+		int totalCost = 0;
+		int unitPrice;
+		System.out.println("Enter the number of food items to be ordered");
+		int noFoodItemsToBeOrdered = sc.nextInt();
+		for (int counter = 1; counter <= noFoodItemsToBeOrdered; counter++) {
+			System.out.println("Enter the food item");
+			String foodItem = sc.next();
+			System.out.println("Enter the quantity");
+			int quantity = sc.nextInt();
+			System.out.println("Enter the unit price");
+			unitPrice=sc.nextInt();
+			System.out.println("You have ordered: " + foodItem);
+			totalCost += unitPrice * quantity;
+			System.out.println("Order placed successfully!");
+			
+		}
+		System.out.println("Total cost of the order: " + totalCost);
+	}
+}
+---------------------------------------------------------------------------------------------------------------
+//Nested loop
+
+class Numbers {
+	public static void main(String[] args) {
+		int rows = 10;
+		for (int i = 1; i <= rows; ++i) {
+			for (int j = 1; j <= i; ++j) {
+                // print displays the text without adding a new line
+				System.out.print(j + " "); 
+			}
+			System.out.println(""); // println displays the text along with a new line
+		}
+	}
+}
+1
+12
+123
+1234
+12345
+
+---------------------------------------------------------------------------------------------
+
+
+//Importing the Scanner class
+import java.util.Scanner;
+public class Customer4 {
+	public static void main(String[] args) {
+		// Create a Scanner object
+		Scanner sc = new Scanner(System.in);
+		int totalCost = 0;
+		int unitPrice = 10;
+		System.out.println("Enter the max amount you can pay");
+		int maxAmountCustomerCanPay = sc.nextInt();
+		System.out.println("Enter the number of food items to be ordered");
+		int noFoodItemsToBeOrdered = sc.nextInt();
+		for (int counter = 1; counter <= noFoodItemsToBeOrdered; counter++) {
+			System.out.println("Enter the food item");
+			String foodItem = sc.next();
+			System.out.println("Enter the quantity");
+			int quantity = sc.nextInt();
+			totalCost += unitPrice * quantity;
+			if (totalCost > maxAmountCustomerCanPay) {
+				System.out.println("Sorry! Total cost is crossing your max amount limit.");
+				break;
+			}
+			System.out.println("You have ordered: " + foodItem);
+			System.out.println("Order placed successfully");
+			System.out.println("Total cost of the order: " + totalCost);
+		}
+	}
+}
+-------------------------------------------------------------------------------------------------------
+//Importing the Scanner class
+import java.util.Scanner;
+public class Customer5 {
+	public static void main(String[] args) {
+		// Create a Scanner object
+		Scanner sc = new Scanner(System.in);
+		int totalCost = 0;
+		int unitPrice = 10;
+		System.out.println("Enter the number of food items to be ordered");
+		int noFoodItemsToBeOrdered = sc.nextInt();
+		for (int counter = 1; counter <= noFoodItemsToBeOrdered; counter++) {
+			if (counter == 3)
+				continue;
+			System.out.println("Enter the food item");
+			String foodItem = sc.next();
+			System.out.println("Enter the quantity");
+			int quantity = sc.nextInt();
+			System.out.println("You have ordered: " + foodItem);
+			System.out.println("You have successfully placed the order number: "+ counter);
+			totalCost += unitPrice * quantity;
+			System.out.println("Total cost of the order: " + totalCost);
+		}
+	}
+}
+// According to the code above dont enter the details for the third iteration and also dont display the total cost
+----------------------------------------------------------------------------------------------
+Accept 10 numbers from user if the user enters 0 the output shown will be the sum of numbers entered till 0
+Testcase 1
+Enter number 1
+1
+Enter number 2
+2
+Enter number 3
+3
+Enter number 4
+4
+Enter number 5
+5
+Enter number 6
+6
+Enter number 7
+7
+Enter number 8
+8
+Enter number 9
+9
+Enter number 10
+10
+The sum is: 55
+------------------------------
+Testcase2
+Enter number 1
+1
+Enter number 2
+32
+Enter number 3
+0
+The sum is: 33
+
+[Hint is break]
+
+import java.util.Scanner;
+class Exercise1 {
+   public static void main(String args[]){
+      int num;
+      int sum=0;
+      Scanner scanner=new Scanner(System.in);
+      for(int ctr=1;ctr<=10;ctr++){
+    	 System.out.println("Enter number "+ctr);
+         num=scanner.nextInt();
+         if(num==0){
+               break;
+         } // end of if
+         sum+=num;
+       } // end of for loop
+      System.out.println("The sum is:"+sum);
+    }  //end of main method
+  } // end of class
+
+-------------------------------------------------------------------------------------------------------------
+
+Enter 10 numbers from user and display the even numbers and also the count of even numbers
+
+Enter the number
+1
+Enter the number
+2
+The number of even number till now is 1
+Enter the number
+15
+Enter the number
+4
+The number of even number till now is 2
+Enter the number
+23
+Enter the number
+45
+Enter the number
+65
+Enter the number
+2
+The number of even number till now is 3
+Enter the number
+23
+Enter the number
+5
+The total number of even numbers are 3
+[Hint is continue]
+
+
+import java.util.Scanner;
+class Exercise2 {
+   public static void main(String args[]){
+      int num;
+      int countEven=0;
+      
+      Scanner scanner=new Scanner(System.in);
+      for(int ctr=1;ctr<=10;ctr++){
+    	 System.out.println("Enter the number");
+         num=scanner.nextInt();
+         if(num%2!=0){
+           continue;    
+         } // end of if
+         countEven++;
+         System.out.println("The number of even number till now is "+countEven);
+       } // end of for loop
+      System.out.println("The total number of even numbers are "+countEven);
+    }  //end of main method
+  } // end of class
+
+-------------------------------------------------------------------------------------------------------------
+Enter 5 numbers from user and find out the minimum number out of the entered 5 numbers.
+Testcase
+Enter the number
+1
+Enter the number
+22
+Enter the number
+100
+Enter the number 
+4
+Enter the number
+-2
+The minumum number is -2
+-----------------------------------------------------------------------------------------------------------
+Enter the roll number,name and marks in 3 subjects for a student. Find out the average of the subjects.
+Display the grade based on avg.
+if average is more than or equal to 80 grade is A
+id average is >=70 and <80 grade is B
+otherwise is C
+Testcase1
+Enter roll
+1
+Enter name
+Rajib
+Enter marks for subject 1
+80
+Enter marks for subject 2
+90
+Enter marks for subject 3
+70
+Average score is 80
+Grade is A
+Testcase2
+Enter roll
+2
+Enter name
+Suresh
+Enter marks for subject 1
+40
+Enter marks for subject 2
+50
+Enter marks for subject 3
+30
+Average score is 40
+Grade is C
+-----------------------------------------------------------------------------------------------------------
+Enter 5 names and count the names starting with A.
+Enter name 1
+Ashok
+Enter name 2
+Rajesh
+Enter name 3
+Suresh
+Enter name 4
+Ajay
+Enter name 5
+Zuben
+The number of names starting with A: 2
+[ Hint charAt ]
+---------------------------------------------------------------------------------------------------------------
+String name=scanner.next();   // Ashok
+char firstChar=name.charAt(0);
+if(firstChar=='A'){
+  count++;
+}
+---------------------------------------------------------------------------------------------------------------
+
+Store the roll number , name and marks of 3 students.
+
+import java.util.Scanner;
+class Student1 {
+   public static void main(String args[]){
+    int roll1;
+    int roll2;
+    int roll3;
+    String name1;
+    String name2;
+    String name3;
+    int marks1;
+    int marks2;
+    int marks3;
+    Scanner scan=new Scanner(System.in);    
+    System.out.println("Enter the roll number for student1");
+    roll1=scan.nextInt();
+    System.out.println("Enter the roll number for student2");
+    roll2=scan.nextInt();
+    System.out.println("Enter the roll number for student3");
+    roll3=scan.nextInt();
+    System.out.println("Enter the name for student1");
+    name1=scan.next();
+    System.out.println("Enter the name for student2");
+    name2=scan.next();
+    System.out.println("Enter the name for student3");
+    name3=scan.next();
+    System.out.println("Enter the marks for student1");
+    marks1=scan.nextInt();
+    System.out.println("Enter the marks for student2");
+    marks2=scan.nextInt();
+    System.out.println("Enter the marks for student3");
+    marks3=scan.nextInt();
+    System.out.println("The details of the student1");
+    System.out.println("roll:"+roll1);
+    System.out.println("name:"+name1);
+    System.out.println("marks:"+marks1);
+    System.out.println("The details of the student2");
+    System.out.println("roll:"+roll2);
+    System.out.println("name:"+name2);
+    System.out.println("marks:"+marks2);
+    System.out.println("The details of the student3");
+    System.out.println("roll:"+roll3);
+    System.out.println("name:"+name3);
+    System.out.println("marks:"+marks3);
+   }
+ }
+
+import java.util.Scanner;
+class Student2 {
+   public static void main(String args[]){
+    int roll1;
+    int roll2;
+    int roll3;
+    String name1;
+    String name2;
+    String name3;
+    int marks1;
+    int marks2;
+    int marks3;
+    Scanner scan=new Scanner(System.in);    
+    System.out.println("Enter the roll number for student1");
+    roll1=scan.nextInt();
+    System.out.println("Enter the name for student1");
+    name1=scan.next();
+    System.out.println("Enter the marks for student1");
+    marks1=scan.nextInt();
+    
+    System.out.println("Enter the roll number for student2");
+    roll2=scan.nextInt();
+    System.out.println("Enter the name for student2");
+    name2=scan.next();
+    System.out.println("Enter the marks for student2");
+    marks2=scan.nextInt();
+    
+    System.out.println("Enter the roll number for student3");
+    roll3=scan.nextInt();
+    System.out.println("Enter the name for student3");
+    name3=scan.next();
+    System.out.println("Enter the marks for student3");
+    marks3=scan.nextInt();
+    System.out.println("The details of the student1");
+    System.out.println("roll:"+roll1);
+    System.out.println("name:"+name1);
+    System.out.println("marks:"+marks1);
+    System.out.println("The details of the student2");
+    System.out.println("roll:"+roll2);
+    System.out.println("name:"+name2);
+    System.out.println("marks:"+marks2);
+    System.out.println("The details of the student3");
+    System.out.println("roll:"+roll3);
+    System.out.println("name:"+name3);
+    System.out.println("marks:"+marks3);
+   }
+ }
+
+import java.util.Scanner;
+class Student3 {
+   public static void main(String args[]){
+    int roll;
+    String name;
+    int marks;
+    Scanner scan=new Scanner(System.in); 
+  for(int i=0;i<3;i++){
+    System.out.println("Enter the roll number for student");
+    roll=scan.nextInt();
+    System.out.println("Enter the name for student");
+    name=scan.next();
+    System.out.println("Enter the marks for student");
+    marks=scan.nextInt();
+    System.out.println("The details of the student");
+    System.out.println("roll:"+roll);
+    System.out.println("name:"+name);
+    System.out.println("marks:"+marks);
+   }
+  }
+}
+
+import java.util.Scanner;
+class Student4 {
+   public static void main(String args[]){
+    int roll=0;
+    String name="";
+    int marks=0;
+    Scanner scan=new Scanner(System.in); 
+  for(int i=0;i<3;i++){
+    System.out.println("Enter the roll number for student");
+    roll=scan.nextInt();
+    System.out.println("Enter the name for student");
+    name=scan.next();
+    System.out.println("Enter the marks for student");
+    marks=scan.nextInt();
+   
+   }
+  for(int i=0;i<3;i++){
+    System.out.println("The details of the student");
+    System.out.println("roll:"+roll);
+    System.out.println("name:"+name);
+    System.out.println("marks:"+marks);
+   }   
+  }
+}
+----------------------------------------------------------------------------------------------------------
+We have two types of programming approach:
+1) Procedural approach  
+C programming is a procedural approach
+2) Object Oriented approach
+C++,Java,Python,C# Object Oriented approach
+
+In procedural approach we concentrate more on functionality and less on data.
+In object oriented program we concentrate on both data and functionality.
