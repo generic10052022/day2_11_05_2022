@@ -1,0 +1,313 @@
+To revise:-
+* Everything in java we need to write within a class.
+* While writing a class, The first character is in uppercase.
+* If a class name consists of multiple words, every word's first
+character is in uppercase. For example if we want to store details
+for employee , we can give a class name as.
+EmployeeDetails - e in uppercase and d is in uppercase
+* keywords should be in smallcase. 
+* variables follows the same same convention as that of methods 
+which is if single word that entirely in smallcase otherwise
+with multiple words second word onwards , first character in 
+uppercase example.
+employeeName, studentMarks
+
+class Demo1{
+public static void main(String[] args)
+   {
+     int num=10; // declaration and initialisation in the same line
+     System.out.println(num);
+
+   }
+}
+
+
+class Demo2{
+public static void main(String[] args)
+   {
+     int num;
+     num=10;
+     System.out.println(num);
+  }
+}
+--------------------------------------------------------------------
+syso====> ctrl+spacebar
+class Demo3{
+public static void main(String[] args)
+   {
+     int roll=1;     // int is a primitive datatype
+     String name="Ashok";    // String is of non-primitive datatype/reference datatype
+     System.out.println(roll);
+     System.out.println(name);
+  }
+}
+---------------------------
+public class Demo4 {
+
+	public static void main(String[] args) {
+	 boolean b=false;
+	 byte bt=10;
+	 char ch='a'; /* character is enclosed within single
+	  quote
+	 float f=12.5;//12.5 is a double value
+	  as the size of double is of 8 bytes
+	  which is more than float which is of
+	  4 bytes, we cannot assign a double
+	  value to a float variable */
+	 float f=12.5f; /*12.5F
+	  the suffix f signifies that 12.5 is 
+	  now a float value */ 
+	 double d=12.5;
+	 System.out.println(b);
+     System.out.println(bt);
+     System.out.println(ch);
+     System.out.println(f);
+     System.out.println(d);
+     float f2=12.4554455436f;
+     System.out.println(f2);
+     double d2=13.454545245634678676;
+     System.out.println(d2);
+	}
+
+}
+-------------------------------------------------------------------------------------------
+
+class Demo5{
+
+public static void main(String args[]) {
+	int numOne = 10;
+	int numTwo = 5;
+	boolean isTrue = true;
+	System.out.println(numOne++ + " " + ++numOne); //Output will be 10 12
+	System.out.println(numTwo-- + " " + --numTwo); //Output will be 5 3
+	System.out.println(!isTrue + " " + ~numOne); //Output will be false -13
+}
+}
+-------------------------------------------------------------------------------
+class Demo6{
+public static void main(String args[]) {
+  int num1=10;
+  int num2=20;
+
+  num1++; // post-increment
+  ++num2; // pre-increment
+  System.out.println(num1);   //11
+  System.out.println(num2);   //21
+
+
+}
+}
+---------------------------------------------------------------------------------------------------
+class Demo7{
+public static void main(String args[]) {
+  int num1=10;
+  int num2=20;
+  int result;
+
+ 
+  result= num1++; // post-increment
+  // The above line result=num1; num1=num1+1;
+ System.out.println(result);  //10
+  System.out.println(num1);   //11 
+  result=++num2; // pre-increment
+  // The above line num2=num2+1; result=num2;
+  System.out.println(result);   //21
+  System.out.println(num2);   //21
+}
+}
+----------------------------------------------------------------------------------------------------
+class Demo8{
+public static void main(String args[]) {
+boolean b1=true;
+boolean b2=false;
+System.out.println(!b1); //false
+System.out.println(!b2); // true
+boolean b3=!b1;
+boolean b4=!b2;
+System.out.println(!b1); //false
+System.out.println(!b2); // true
+}
+}
+------------------------------------------------------------------------------
+
+class Demo9{
+public static void main(String args[]) {
+int num1=10;
+int num2=20;
+System.out.println(num1==num2); // == is for comparison whether they are equal or not // false
+boolean b=num1==num2;
+System.out.println(b);
+if(num1==num2){
+  System.out.println("num1 and num2 are equal");
+}
+else
+{
+ System.out.println("num1 and num2 are not equal");
+} 
+}
+}
+----------------------------------------------------
+class Demo10{
+public static void main(String args[]) {
+int num1=10;
+int num2=20;
+
+if(num1!=num2){
+  System.out.println("num1 and num2 are not equal");
+}
+else
+{
+ System.out.println("num1 and num2 are equal");
+} 
+}
+}
+---------------------------------------------------------------------------------------
+class Demo11{
+public static void main(String args[]) {
+int num1=10;
+int num2=20;
+
+if(num1<=num2){
+  System.out.println("num1 is either less than num2 or equal");
+}
+else
+{
+ System.out.println("num1 is greater than num2");
+} 
+}
+}
+----------------------------------------------------------------------------------------
+
+class Demo12{
+public static void main(String args[]) {
+int num1=10;
+int num2=20;
+int num3=20;
+ System.out.println(num1<num2 && num2==num3); // true && true==> true
+ System.out.println(num1>num2 && num2==num3); // false && true==> false
+ System.out.println(num1<num2 || num2==num3); // true || true ===> true
+ System.out.println(num1>num2 || num2==num3);  //false || true===> true
+ 
+}
+}
+-------------------------------------------------------------------------------
+class Demo13{
+public static void main(String args[]) {
+int studentMarks=75;
+if(studentMarks>=75 && studentMarks<=100){
+  System.out.println("Good score");
+}
+else
+{
+  System.out.println("Need to work hard!!!!");
+
+}
+ 
+}
+}
+-----------------------------------------------------------------------------------------------
+Compare two numbers and display the largest number out of two.
+
+class Demo13{
+public static void main(String args[]) {
+int num1=100;
+int num2=80;
+int max;
+if(num1>num2){
+  max=num1;  
+}
+else
+{
+max=num2; 
+}
+System.out.println(max); 
+}
+}
+
+
+-------------------------------
+
+class Demo14{
+public static void main(String args[]) {
+int num1=100;
+int num2=80;
+int max;
+max=(num1>num2)?num1:num2;
+System.out.println(max);
+}
+}
+
+---------------------
+
+class Demo15{
+public static void main(String args[]) {
+int num1=100;
+int num2=80;
+String status;
+boolean status2;
+status=(num1==num2)?"num1 and num2 are equal":"num1 and num2 are unequal";
+status2=(num1==num2)?true:false;
+System.out.println(status);
+System.out.println(status2);
+}
+}
+------------------------------------------------------------------------------------
+Increment the value of num by 2
+// Whenever we want to assign the changes to the same variable 
+// after performing arithmetic operation we can use the compound
+// assignment operators. +=, -=,*=,/=
+class Demo16{
+public static void main(String args[]) {
+int num=100;
+num=num+2;
+
+System.out.println(num); //102
+
+}
+}
+----------------------------------------------------------------------
+class Demo16{
+public static void main(String args[]) {
+int num=100;
+num+=2;
+System.out.println(num); //102
+
+}
+}
+
+--------------------------------------------------
+
+class Demo17{
+public static void main(String args[]) {
+int num1=100;
+int num2=40;
+int num3=2;
+int result=num1+num2/num3;
+System.out.println(result); // 120
+
+}
+}
+-----------------------
+
+class Demo18{
+public static void main(String args[]) {
+int num1=100;
+int num2=40;
+int num3=2;
+int result=(num1+num2)/num3;
+System.out.println(result); // 70
+
+}
+}
+-----------------------------------------------
+
+class Demo18{
+public static void main(String args[]) {
+int num1=100;
+int num2=40;
+int num3=2;
+int result=num1+num2-num3;
+System.out.println(result); 1//38
+
+}
+}
