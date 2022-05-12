@@ -1,0 +1,145 @@
+class IfAss1 {
+	public static void main(String[] args) {
+	    int n=5,m=5;
+	if(n==m)
+		System.out.println(n+m);
+	else
+		System.out.println((n+m)*2);
+	}
+}
+class IfAss2{
+	public static void main(String[] args) {
+	    int a=1,b=4,c=2,d;
+		float r1,r2;
+	d=(b*b)-(4*a*c);
+	if(d==0)
+	{
+		r1 = (-b + d)/2*a;
+		System.out.println("the root is "+r1);
+		
+	}
+	else if (d>0)
+	{
+		
+		r1=(-b + d)/2*a;
+		r2=(-b - d)/2*a;
+		System.out.println("Root1 is "+r1);
+		System.out.println("Root2 is "+r2);
+	}
+		else
+		{
+		System.out.println("The equation has no real root");
+		}
+	}
+}
+    class IfAss3
+{
+	public static void main(String[] args) 
+	{
+		//int a=1,b=5,c=3;
+		//int a=3,b=7,c=8;
+		//int a=7,b=2,c=9;
+		int a=2,b=6,c=7;
+		if(a==7) System.out.println(b*c);
+		else if (b==7) System.out.println(c);
+		else if (c==7) System.out.println(-1);
+		else System.out.println(a*b*c);
+	}
+}
+	    class IfDemo1
+{
+	public static void main(String s[])
+	{
+		int x=10;
+		if (x>0)
+		{System.out.println(x+" is positive");}
+		else if (x<0)
+		{System.out.println(x+" is negative");}
+		else
+		{System.out.println("x is zero");}
+	}
+}class IfDemo2
+{
+	public static void main(String s[])
+	{
+		int x=10,y=5,z=4;
+		if ((x>=y)&&(x>=z))
+		{System.out.println("x is maximum");}
+		if ((y>=x)&&(y>=z))
+		{System.out.println("y is maximum");}
+		if ((z>=x)&&(z>=y))
+		{System.out.println("z is maximum");}
+		
+	}
+}class IfDemo4
+{
+	public static void main(String s[])
+	{
+		int x=10,y=56,z=42;
+		if ((x==y) && (x==z))
+		{System.out.println("x, y, z are equal");}
+		if (x>=y)
+		{
+			if (x>=z)
+			{System.out.println("x is maximum");}
+			else
+			{System.out.println("z is maximum");}
+		}
+		else
+		{
+			if (y>=z)
+			{System.out.println("y is maximum");}
+			else
+			{System.out.println("z is maximum");}
+		}
+			
+		
+	}
+}class IfDemo6
+{
+	public static void main(String s[])
+	{
+		int x=10,y=5;
+		char ch='*';
+		if (ch=='+')
+		System.out.println(x+" + "+y+" = "+(x+y));
+		if (ch=='-')
+		System.out.println("x - y = "+(x-y));
+		if (ch=='*')
+		System.out.println("x * y = "+(x*y));
+		if (ch=='/')
+		System.out.println("x / y = "+(x/y));
+		if (ch=='%')
+		System.out.println("x % y = "+(x%y));
+		
+	}
+}class IfDemo6
+{
+	public static void main(String s[])
+	{
+		int x=10,y=5;
+		char ch='+';
+		
+		switch (ch)
+		{
+		case '+':
+		System.out.println(x+" + "+y+" = "+(x+y));
+		break;
+		case '-':
+		System.out.println("x - y = "+(x-y));
+		break;
+		case '*':
+		System.out.println("x * y = "+(x*y));
+		break;
+		case '/':
+		System.out.println("x / y = "+(x/y));
+		break;
+		case '%':
+		System.out.println("x % y = "+(x%y));
+		break;
+		default :
+		System.out.println("wrong arithmetic operator");
+		}
+		
+	}
+}

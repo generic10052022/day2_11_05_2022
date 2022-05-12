@@ -1,0 +1,101 @@
+class LoopDemo1
+{
+	public static void main(String s[])
+	{
+		 
+//for(intitial value;stopping condition;increment/decrement)
+		
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println(i+" ");
+		}
+
+	
+
+	}
+}class LoopDemo2
+{
+	public static void main(String s[])
+	{
+		int j=101;
+		do
+		{
+			System.out.println(j+" ");
+			j=j+1;
+			
+		}
+		while (j<101);
+	}
+}class LoopDemo3
+{
+	public static void main(String s[])
+	{
+		int j=101;
+		while (j<101)
+		{
+			System.out.println(j+" ");
+			j=j+1;
+			
+		}
+		
+	}
+}class LoopDemo3
+{
+	public static void main(String s[])
+	{
+		int j=101;
+		while (j<101)
+		{
+			System.out.println(j+" ");
+			j=j+1;
+			
+		}
+		
+	}
+}class LoopDemo5
+{
+	public static void main(String s[])
+	{
+		int n=3;
+		for(int i=1;i<=10;i++)
+		{
+			 if(i==5)
+			 {continue;}
+
+			System.out.println(n*i);
+		}
+		
+	}
+}class LoopDemo6
+{
+	public static void main(String s[])
+	{
+		int n=3;
+		for(int i=1;i<=30;i++)
+		{
+			  
+
+			
+			//if ((n*i)>=60)
+				break;
+System.out.println(n*i);
+		}
+		System.out.println("loop over");
+		
+	}
+}class LoopDemo7
+{
+	public static void main(String s[])
+	{
+		for(int j=1;j<=3;j++)
+		{
+			for(int i=0;i<=10;i++)
+			{System.out.print(i);}
+			System.out.println();
+		}
+	
+		
+		System.out.println("loop over");
+		
+	}
+}
